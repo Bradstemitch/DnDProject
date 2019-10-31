@@ -42,6 +42,66 @@ class Characteristics extends Component {
             this.decreasePointBuyUsed(this.state.strengthValue);
         }
     }
+    increaseDexterity = () => {
+        if (this.state.dexterityValue < 30) {
+            this.setState({ dexterityValue: this.state.dexterityValue + 1 });
+            this.increasePointBuyUsed(this.state.dexterityValue);
+        }
+    }
+    decreaseDexterity = () => {
+        if (this.state.dexterityValue > 1) {
+            this.setState({ dexterityValue: this.state.dexterityValue - 1 });
+            this.decreasePointBuyUsed(this.state.dexterityValue);
+        }
+    }
+    increaseConstitution = () => {
+        if (this.state.constitutionValue < 30) {
+            this.setState({ constitutionValue: this.state.constitutionValue + 1 });
+            this.increasePointBuyUsed(this.state.constitutionValue);
+        }
+    }
+    decreaseConstitution = () => {
+        if (this.state.constitutionValue > 1) {
+            this.setState({ constitutionValue: this.state.constitutionValue - 1 });
+            this.decreasePointBuyUsed(this.state.constitutionValue);
+        }
+    }
+    increaseIntelligence = () => {
+        if (this.state.intelligenceValue < 30) {
+            this.setState({ intelligenceValue: this.state.intelligenceValue + 1 });
+            this.increasePointBuyUsed(this.state.intelligenceValue);
+        }
+    }
+    decreaseIntelligence = () => {
+        if (this.state.intelligenceValue > 1) {
+            this.setState({ intelligenceValue: this.state.intelligenceValue - 1 });
+            this.decreasePointBuyUsed(this.state.intelligenceValue);
+        }
+    }
+    increaseWisdom = () => {
+        if (this.state.wisdomValue < 30) {
+            this.setState({ wisdomValue: this.state.wisdomValue + 1 });
+            this.increasePointBuyUsed(this.state.wisdomValue);
+        }
+    }
+    decreaseWisdom = () => {
+        if (this.state.wisdomValue > 1) {
+            this.setState({ wisdomValue: this.state.wisdomValue - 1 });
+            this.decreasePointBuyUsed(this.state.wisdomValue);
+        }
+    }
+    increaseCharisma = () => {
+        if (this.state.charismaValue < 30) {
+            this.setState({ charismaValue: this.state.charismaValue + 1 });
+            this.increasePointBuyUsed(this.state.charismaValue);
+        }
+    }
+    decreaseCharisma = () => {
+        if (this.state.strengthValue > 1) {
+            this.setState({ charismaValue: this.state.charismaValue - 1 });
+            this.decreasePointBuyUsed(this.state.charismaValue);
+        }
+    }
 
 
     increasePointBuyUsed = (value) => {
@@ -103,20 +163,20 @@ class Characteristics extends Component {
                         <td>{this.state.charismaValue + " (" + this.findModifier(this.state.charismaValue) + ")"}</td>
                     </tr>
                     <tr>
-                        <button onClick={this.increaseStrength}>^</button>
-                        <td>{this.state.dexterityValue + " (" + this.findModifier(this.state.dexterityValue) + ")"}</td>
-                        <td>{this.state.constitutionValue + " (" + this.findModifier(this.state.constitutionValue) + ")"}</td>
-                        <td>{this.state.intelligenceValue + " (" + this.findModifier(this.state.intelligenceValue) + ")"}</td>
-                        <td>{this.state.wisdomValue + " (" + this.findModifier(this.state.wisdomValue) + ")"}</td>
-                        <td>{this.state.charismaValue + " (" + this.findModifier(this.state.charismaValue) + ")"}</td>
+                        <td><button onClick={this.increaseStrength}>^</button></td>
+                        <td><button onClick={this.increaseDexterity}>^</button></td>
+                        <td><button onClick={this.increaseConstitution}>^</button></td>
+                        <td><button onClick={this.increaseIntelligence}>^</button></td>
+                        <td><button onClick={this.increaseWisdom}>^</button></td>
+                        <td><button onClick={this.increaseCharisma}>^</button></td>
                     </tr>
                     <tr>
-                        <td><button onClick={this.decreaseStrength}> V</button></td>
-                        <td>{this.state.dexterityValue + " (" + this.findModifier(this.state.dexterityValue) + ")"}</td>
-                        <td>{this.state.constitutionValue + " (" + this.findModifier(this.state.constitutionValue) + ")"}</td>
-                        <td>{this.state.intelligenceValue + " (" + this.findModifier(this.state.intelligenceValue) + ")"}</td>
-                        <td>{this.state.wisdomValue + " (" + this.findModifier(this.state.wisdomValue) + ")"}</td>
-                        <td>{this.state.charismaValue + " (" + this.findModifier(this.state.charismaValue) + ")"}</td>
+                        <td><button onClick={this.decreaseStrength}>V</button></td>
+                        <td><button onClick={this.decreaseDexterity}>V</button></td>
+                        <td><button onClick={this.decreaseConstitution}>V</button></td>
+                        <td><button onClick={this.decreaseIntelligence}>V</button></td>
+                        <td><button onClick={this.decreaseWisdom}>V</button></td>
+                        <td><button onClick={this.decreaseCharisma}>V</button></td>
                     </tr>
                     <tr>
                         <th colSpan="6">{this.state.pointBuyUsed}</th>
